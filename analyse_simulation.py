@@ -3,7 +3,6 @@ from __future__ import division
 import numpy as np
 from intpol	import pmInterpolation
 import time
-import read_binary_gadget as read
 from gadget_tools import Snapshot
 import gc
 import random
