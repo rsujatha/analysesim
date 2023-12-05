@@ -51,7 +51,11 @@ class cosmology(object):
 			return 18*np.pi**2+60*x-32*x**2
 		else:     ### in the paper this condition is given as or == 0, pls take care while using this condition
 			return 18*np.pi**2+82*x-39*x**2
-
+	
+	def BryanNorman_del_bkground(self,z):
+		Om_of_z = self.Omega_matter*(1+z)**3/(self.E(z))**2  ### Om_of_z is defined as the ration Background density(z)/Critical Density(z)
+		return self.BryanNorman_del_crit(z)/Om_of_z
+			
 
 	def Omega_radiation(self,TCMB=2.7255):
 		radiation_density = self.radiationenergyconstant*TCMB**4/(self.speed_of_light*1e3)**2
